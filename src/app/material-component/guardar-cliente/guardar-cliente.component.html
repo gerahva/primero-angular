@@ -1,0 +1,26 @@
+<p>
+  Aqui ira el formulario para guardar un cliente en ambiente angular
+</p>
+<form class="example-form" >
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Escribe el identificador" name="cliente.ident"   [(ngModel)]="cliente.ident" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Escribe tu nombre" name="cliente.nombre" [(ngModel)]="cliente.nombre" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Escribe tu mail" name="cliente.mail" [(ngModel)]="cliente.mail" >
+
+  </mat-form-field>
+  <h3>Datos de Dirección</h3>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Escribe el mobre de la calle" name="cliente.direccion.calle" [(ngModel)]="direccion.calle"  >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Escribe el código postal" name="cliente.direccion.cp" [(ngModel)]="direccion.cp" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Escribe el Municipio" name="cliente.direccion.municipio" [(ngModel)]="direccion.municipio" >
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="guardar()"   >GUARDAR CLIENTE</button>
+</form>
