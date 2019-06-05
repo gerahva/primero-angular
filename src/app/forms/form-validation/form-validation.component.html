@@ -11,7 +11,7 @@
           <mat-form-field>
             <input matInput placeholder="First name" [formControl]="form.controls['fname']">
           </mat-form-field>
-          <mat-hint *ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched" class="text-danger font-14">You must include a first name.</mat-hint>
+          <mat-hint *ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched" class="text-danger font-14">Debes poner tu nombre es requerido.</mat-hint>
           <mat-hint *ngIf="form.controls['fname'].hasError('minlength') && form.controls['fname'].touched" class="text-danger font-14">Your first name must be at least 5 characters long.</mat-hint>
           <mat-hint *ngIf="form.controls['fname'].hasError('maxlength') && form.controls['fname'].touched" class="text-danger font-14">Your first name cannot exceed 10 characters.</mat-hint>
         </div>
@@ -84,7 +84,7 @@
       </div>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Guardar</button>
       </mat-card-actions>
     </form>
   </mat-card-content>

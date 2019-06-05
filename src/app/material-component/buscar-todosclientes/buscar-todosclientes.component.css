@@ -1,0 +1,14 @@
+.ancho{
+    width: 100%;
+}
+
+.colorcito{
+    color: dodgerblue;
+    font-size: 20px;
+}
+.hacer-amarillo{
+    background-color:yellow;
+}
+.hacer-rojo{
+    background-color: red;
+}

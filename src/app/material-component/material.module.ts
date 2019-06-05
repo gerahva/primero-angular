@@ -35,6 +35,13 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { GuardarClienteComponent } from './guardar-cliente/guardar-cliente.component';
+import { BuscarClientesComponent } from './buscar-clientes/buscar-clientes.component';
+import { BorrarClientesComponent } from './borrar-clientes/borrar-clientes.component';
+import { ActualizarClientesComponent } from './actualizar-clientes/actualizar-clientes.component';
+import { BuscarTodosclientesComponent } from './buscar-todosclientes/buscar-todosclientes.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { TreeComponent } from '../forms/tree/tree.component';
+
 
 @NgModule({
   imports: [
@@ -46,7 +53,8 @@ import { GuardarClienteComponent } from './guardar-cliente/guardar-cliente.compo
     ReactiveFormsModule,
     FlexLayoutModule,
     SweetAlert2Module,
-    CdkTableModule
+    CdkTableModule,
+    NgxDatatableModule,
   ],
   providers: [],
   entryComponents: [DialogOverviewExampleDialogComponent],
@@ -71,7 +79,12 @@ import { GuardarClienteComponent } from './guardar-cliente/guardar-cliente.compo
     SnackbarComponent,
     SliderComponent,
     SlideToggleComponent,
-    GuardarClienteComponent
+    GuardarClienteComponent,
+    BuscarClientesComponent,
+    BorrarClientesComponent,
+    ActualizarClientesComponent,
+    BuscarTodosclientesComponent,
+    TreeComponent
   ]
 })
 export class MaterialComponentsModule {}

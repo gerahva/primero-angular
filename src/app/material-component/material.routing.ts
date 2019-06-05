@@ -20,6 +20,10 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { GuardarClienteComponent } from './guardar-cliente/guardar-cliente.component';
+import { BuscarClientesComponent } from './buscar-clientes/buscar-clientes.component';
+import { BorrarClientesComponent } from './borrar-clientes/borrar-clientes.component';
+import { ActualizarClientesComponent } from './actualizar-clientes/actualizar-clientes.component';
+import { BuscarTodosclientesComponent } from './buscar-todosclientes/buscar-todosclientes.component';
 
 export const MaterialRoutes: Routes = [
   {
@@ -29,6 +33,22 @@ export const MaterialRoutes: Routes = [
       {
         path: "guardar-cliente",
         component: GuardarClienteComponent
+      },
+      {
+        path: 'buscar-clientes',
+        component: BuscarClientesComponent
+      },
+      {
+        path: 'borrar-clientes',
+        component: BorrarClientesComponent
+      },
+      {
+        path: 'actualizar-clientes',
+        component: ActualizarClientesComponent
+      },
+      {
+        path: 'buscar-todosclientes',
+        component: BuscarTodosclientesComponent
       },
       {
         path: 'button',

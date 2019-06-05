@@ -1,26 +1,60 @@
 <p>
   Aqui ira el formulario para guardar un cliente en ambiente angular
 </p>
-<form class="example-form" >
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Escribe el identificador" name="cliente.ident"   [(ngModel)]="cliente.ident" >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Escribe tu nombre" name="cliente.nombre" [(ngModel)]="cliente.nombre" >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Escribe tu mail" name="cliente.mail" [(ngModel)]="cliente.mail" >
+<form class="example-form" [formGroup]="formularioGuardar" >
+  <div fxLayout="row wrap">
 
-  </mat-form-field>
-  <h3>Datos de Dirección</h3>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Escribe el mobre de la calle" name="cliente.direccion.calle" [(ngModel)]="direccion.calle"  >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Escribe el código postal" name="cliente.direccion.cp" [(ngModel)]="direccion.cp" >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Escribe el Municipio" name="cliente.direccion.municipio" [(ngModel)]="direccion.municipio" >
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="guardar()"   >GUARDAR CLIENTE</button>
+    <div class="p-10" fxFlex="100">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Escribe el identificador" [formControl]="formularioGuardar.controls['fiden']" name="cliente.ident" [(ngModel)]="cliente.ident"  >
+        </mat-form-field>
+      <mat-hint *ngIf="formularioGuardar.controls['fiden'].hasError('required') && formularioGuardar.controls['fiden'].touched" class="text-danger font-14">Este campo es requerido.</mat-hint>
+      <mat-hint *ngIf="formularioGuardar.controls['fiden'].errors?.number && formularioGuardar.controls['fiden'].touched" class="text-danger font-14">Debes ingresar un número de identificador para continuar.</mat-hint>
+
+    </div>
+    
+
+    <div class="p-10" 
+     fxFlex="100">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Escribe tu nombre" [formControl]="formularioGuardar.controls['fnombre']" name="cliente.nombre"
+        [(ngModel)]="cliente.nombre"  >
+    </mat-form-field>
+    <mat-hint *ngIf="formularioGuardar.controls['fnombre'].hasError('required') && formularioGuardar.controls['fnombre'].touched" class="text-danger font-14">Debes poner tu nombre es requerido.</mat-hint>
+    <mat-hint *ngIf="formularioGuardar.controls['fnombre'].hasError('minlength') && formularioGuardar.controls['fnombre'].touched" class="text-danger font-14">El nombre debe tener más de 4  caracteres.</mat-hint>
+    <mat-hint *ngIf="formularioGuardar.controls['fnombre'].hasError('maxlength') && formularioGuardar.controls['fnombre'].touched" class="text-danger font-14">El nombre no debe sobrepasar de 15 caracteres.</mat-hint>
+    </div>
+
+    <div class="p-10" fxFlex="100">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Escribe tu mail" [formControl]="formularioGuardar.controls['femail']" name="cliente.mail" [(ngModel)]="cliente.mail" >
+</mat-form-field>
+<small *ngIf="formularioGuardar.controls['femail'].hasError('required') && formularioGuardar.controls['femail'].touched" class="text-danger font-14">Debes incluir un correo es requerido.</small>
+<small *ngIf="formularioGuardar.controls['femail'].errors?.email && formularioGuardar.controls['femail'].touched" class="text-danger font-14">Debes incluir una dirección de correo válido.</small>
+</div>
+<h3>Datos de Dirección</h3>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Escribe el nombre de la calle" [formControl]="formularioGuardar.controls['fdirecc']" name="cliente.direccion.calle"
+        [(ngModel)]="direccion.calle">
+    </mat-form-field>
+    <mat-hint *ngIf="formularioGuardar.controls['fdirecc'].hasError('required') && formularioGuardar.controls['fdirecc'].touched" class="text-danger font-14">Debes ingresar tu dirección es requerido.</mat-hint>
+    <mat-hint *ngIf="formularioGuardar.controls['fdirecc'].hasError('minlength') && formularioGuardar.controls['fdirecc'].touched" class="text-danger font-14">La dirección debe tener más de 4  caracteres.</mat-hint>
+    <mat-hint *ngIf="formularioGuardar.controls['fdirecc'].hasError('maxlength') && formularioGuardar.controls['fdirecc'].touched" class="text-danger font-14">La dirección no debe sobrepasar de 25 caracteres.</mat-hint>
+   
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Escribe el código postal" [formControl]="formularioGuardar.controls['fcpost']" name="cliente.direccion.cp" [(ngModel)]="direccion.cp">
+    </mat-form-field>
+    <small *ngIf="formularioGuardar.controls['fcpost'].hasError('required') && formularioGuardar.controls['fcpost'].touched" class="text-danger font-14">Debes ingresar este campo requerido.</small>
+    <mat-hint *ngIf="formularioGuardar.controls['fcpost'].hasError('minlength') && formularioGuardar.controls['fcpost'].touched" class="text-danger font-14">El código postal debe tener más de 5 dígitos.</mat-hint>
+    <mat-hint *ngIf="formularioGuardar.controls['fcpost'].hasError('maxlength') && formularioGuardar.controls['fcpost'].touched" class="text-danger font-14">El código postal no debe tener más de 5 dígitos.</mat-hint>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Escribe el Municipio" [formControl]="formularioGuardar.controls['fmuni']" name="cliente.direccion.municipio"
+        [(ngModel)]="direccion.municipio">
+    </mat-form-field>
+    <small *ngIf="formularioGuardar.controls['fmuni'].hasError('required') && formularioGuardar.controls['fmuni'].touched" class="text-danger font-14">Debes ingresar este campo requerido.</small>
+    <mat-hint *ngIf="formularioGuardar.controls['fmuni'].hasError('minlength') && formularioGuardar.controls['fmuni'].touched" class="text-danger font-14">El Municipio debe tener más de 5 caracteres.</mat-hint>
+    <mat-hint *ngIf="formularioGuardar.controls['fmuni'].hasError('maxlength') && formularioGuardar.controls['fmuni'].touched" class="text-danger font-14">El Municipio no debe sobrepasar los 25 caracteres.</mat-hint>
+  </div>
+  <button mat-raised-button color="primary" (click)="guardar()"   [disabled]="!formularioGuardar.valid" >GUARDAR CLIENTE</button>
 </form>

@@ -11,6 +11,7 @@ import { FileUploadModule } from 'ng2-file-upload/ng2-file-upload';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
+
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
@@ -30,6 +31,7 @@ import { UploadComponent } from './file-upload/upload.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ import { MultiselectComponent } from './multiselect/multiselect.component';
     FlexLayoutModule,
     FormsModule,
     QuillModule,
+    FormsModule,
     ReactiveFormsModule,
     FileUploadModule,
     MatTreeModule,

@@ -25,8 +25,8 @@ export class FormValidationComponent implements OnInit {
         null,
         Validators.compose([
           Validators.required,
-          Validators.minLength(5),
-          Validators.maxLength(10)
+          Validators.minLength(7),
+          Validators.maxLength(14)
         ])
       ],
       email: [

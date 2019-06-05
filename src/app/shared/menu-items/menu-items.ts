@@ -39,22 +39,38 @@ const MENUITEMS = [
   },
   {
     state: 'dashboards',
-    name: 'Dashboards',
+    name: 'MENÚ DE OPCIONES',
     type: 'sub',
-    icon: 'av_timer',
+    icon: 'list_alt',
     children: [
-      { state: 'dashboard1', name: 'Dashboard 1', type: 'link' },
+      { state: 'dashboard1', name: 'Dashboard 1', type: 'link', icon: 'list_alt'},
       { state: 'dashboard2', name: 'Dashboard 2', type: 'link' }
     ]
   },
+  // empieza la de formulario
+  {
+    state: 'forms',
+    name: 'Forms',
+    type: 'sub',
+    icon: 'insert_drive_file',
+    children: [
+        { state: 'form-validation', name: 'Form Validation', type: 'link' },
+    ]
+    },
+// termina la de formilario
   {
     state: 'material',
     name: 'Clientes',
     type: 'sub',
-    icon: 'bubble_chart',
-    badge: [{ type: 'red', value: '1' }],
+    icon: 'face',
+    badge: [{ type: 'red', value: '5' }],
     children: [
       {state:"guardar-cliente",name: "Guardar Cliente", type:"link"},
+    
+      {state:'buscar-clientes',name:'Buscar clientes',type:'link'},
+      {state:'borrar-clientes',name:'Borrar clientes',type:'link'},
+      {state:'actualizar-clientes',name:'Actualizar clientes',type:'link'},
+      {state:'buscar-todosclientes',name:'Buscar todos los Clientes actuales',type:'link'},
      /* { state: 'badge', name: 'Badge', type: 'link' },
       { state: 'button', name: 'Buttons', type: 'link' },
       { state: 'cards', name: 'Cards', type: 'link' },
